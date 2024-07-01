@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "allOf": [
+    {
+      "properties": {
+        "settings": {
+          "required": [
+            "topics"
+          ],
+          "type": "object",
+          "description": "Configuration for plugin",
+          "properties": {
+            "topics": {
+              "type": "array",
+              "description": "Topic configuration",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "required": [
+                  "name",
+                  "onReceiveMessagesHandler",
+                  "provider"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Topic name to subscribe",
+                    "pattern": "^[a-z]{2}\\.[a-z-_]+\\.[a-z-_]+\\.[a-z-_]+\\.v{1}\\d{1,2}$",
+                    "default": "two_letters_country.product.entity.state.v1"
+                  },
+                  "provider": {
+                    "type": "string",
+                    "description": "Stream technology provider",
+                    "enum": [
+                      "PubSub",
+                      "Kafka"
+                    ]
+                  },
+                  "onReceiveMessagesHandler": {
+                    "type": "string",
+                    "description": "Handler to call when receive messages from the streamer",
+                    "minLength": 3
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "$ref": "https://api.staging.cencox.xyz/seki/statics/public/schemas/v1/projects/staged-type.schema.json"
+    }
+  ]
+}

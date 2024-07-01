@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "allOf": [
+    {
+      "properties": {
+        "settings": {
+          "required": ["schedule"],
+          "type": "object",
+          "description": "Specific configuration",
+          "default": {
+            "schedule": "*/30 * * * *"
+          },
+          "properties": {
+            "schedule": {
+              "description": "Cron tab expression used to schedule jobs, it must be written in Cron format. Default value: */30 * * * *",
+              "type": "string",
+              "default": "*/30 * * * *"
+            },
+            "concurrencyPolicy": {
+              "type": "string",
+              "description": "Specifies how to treat concurrent executions of a job that is created by this CronJob. Default value: Allow",
+              "default": "Allow",
+              "anyOf": [
+                { "const": "Allow", "description": "Allow (default): The CronJob allows concurrently running jobs" },
+                { "const": "Forbid", "description": "Forbid: The CronJob does not allow concurrent runs; if it is time for a new job run" },
+                { "const": "Replace", "description": "Replace: If it is time for a new job run and the previous job run hasn't finished yet, the CronJob replaces the currently running job run with a new job run" }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "$ref": "https://api.staging.cencox.xyz/seki/statics/public/schemas/v1/projects/type.schema.json"
+    }
+  ]
+}

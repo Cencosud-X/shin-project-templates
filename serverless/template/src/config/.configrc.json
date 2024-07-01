@@ -1,0 +1,8 @@
+{
+  "$schema": "https://api.staging.cencox.xyz/seki/statics/public/schemas/v1/secrets/configrc.schema.json",
+  "secrets": {
+    "includes": [
+      "PRODUCT_NAME"
+    ]
+  }
+}

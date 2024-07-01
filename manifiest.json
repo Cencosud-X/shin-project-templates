@@ -1,0 +1,17 @@
+{
+  "$schema": "https://api.staging.cencox.xyz/seki/statics/public/schemas/v1/projects/manifiestrc.schema.json",
+  "author": {
+    "github_user": "rorogallardo",
+    "name": "Team Seki"
+  },
+  "descriptions": {
+    "en": "long description...",
+    "es": "Lista de plantillas para Seki con configuraciones de proyectos en SHIN"
+  },
+  "icons": {
+    "dark": "logo.svg",
+    "light": "logo.svg"
+  },
+  "name": "SHIN Project Templates",
+  "types": ["documentation-portal/typerc.json"]
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://api.staging.cencox.xyz/seki/statics/public/schemas/v1/projects/typerc.schema.json",
+  "name": "Documentation Portal",
+  "tags": [
+    "Docusaurus",
+    "Documentation",
+    "Node",
+    "React",
+    "Cencosud-xlabs"
+  ],
+  "kind": "documentation-portal",
+  "pipeline_kind": "web",
+  "folder": "apps",
+  "icons": {
+    "light": "icons/icon.svg",
+    "dark": "icons/icon.svg"
+  },
+  "descriptions": {
+    "es": "Proyecto de documentación basado en la librería docusaurus que nos permite crear un portal de documentación a través de archivos markdown",
+    "en": "Documentation project template based on the awesome docusaurus library"
+  },
+  "scripts": {
+    "pre": "scripts/pre.js",
+    "post": "scripts/post.js",
+    "rollback": "scripts/rollback.js"
+  },
+  "interpolations": {
+    "source": "template"
+  }
+}

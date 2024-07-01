@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "allOf": [
+    {
+      "properties": {
+        "settings": {
+          "required": [],
+          "type": "object",
+          "description": "Specific configuration",
+          "default": {
+            "internal": false
+          },
+          "properties": {
+            "internal": {
+              "type": "boolean",
+              "description": "Defines that the api will be for internal use, it will not be exposed to the internet",
+              "default": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "$ref": "https://api.staging.cencox.xyz/seki/statics/public/schemas/v1/projects/staged-type.schema.json"
+    }
+  ]
+}

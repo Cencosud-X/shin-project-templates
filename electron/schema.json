@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "allOf": [
+    {
+      "properties": {
+        "settings": {
+          "required": [
+            "frontendProject"
+          ],
+          "type": "object",
+          "description": "Specific configuration",
+          "properties": {
+            "frontendProject": {
+              "type": "string",
+              "description": "Front end project to lift in electron",
+              "minLength": 2
+            }
+          }
+        }
+      }
+    },
+    {
+      "$ref": "https://api.staging.cencox.xyz/seki/statics/public/schemas/v1/projects/type.schema.json"
+    }
+  ]
+}

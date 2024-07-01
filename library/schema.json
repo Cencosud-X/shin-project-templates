@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "allOf": [
+    {
+      "properties": {
+        "settings": {
+          "required": [],
+          "type": "object",
+          "description": "Specific configuration",
+          "properties": {
+            "publishable": {
+              "description": "a library marked as publishable (npm publish)",
+              "type":"boolean",
+              "default": false
+            },
+            "buildable": {
+              "description": "a library marked as a 'build' dist output",
+              "type":"boolean",
+              "default": false
+            }
+          },
+          "if": {
+            "properties": {
+              "publishable": {
+                "const": true
+              }
+            },
+            "required": ["publishable"]
+          },
+          "then": {
+            "properties": {
+              "npm": {
+                "required": ["organization"],
+                "type":"object",
+                "description": "npm configuration for publishing",
+                "properties": {
+                  "organization": {
+                    "type": "string",
+                    "enum": ["cencosudx", "team_seki", "team_yumi"],
+                    "description": "npm organization name"
+                  }
+                }
+              },
+              "buildable": {
+                "const": true
+              }
+            },
+            "required": ["npm"]
+          }
+        }
+      }
+    },
+    {
+      "$ref": "https://api.staging.cencox.xyz/seki/statics/public/schemas/v1/projects/type.schema.json"
+    }
+  ]
+}
