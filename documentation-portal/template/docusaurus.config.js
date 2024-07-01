@@ -2,7 +2,8 @@ const discordHelpLink = 'https://discord.com/channels/872122460185690174/8826547
 const productName = '{{data.name}}';
 const repositoryName = '{{data.product.name}}'
 const repositoryURL = `https://github.com/Cencosud-xlabs/${repositoryName}`;
-let apiDocs = `{{data.settings.apiDocs}}`
+
+let apiDocs = "{{typeof data.settings.apiDocs}}"; 
 if (typeof apiDocs == 'array') {
   apiDocs = apiDocs.map((apiDoc) => { return { label: apiDoc.label, to: `/api-doc?url=${apiDoc.to}` } })
 }
