@@ -7,7 +7,7 @@ let apiDocs = [];
 {{#if data.settings.apiDocs}}
   {{#each data.settings.apiDocs}}
     apiDocs.push({
-      to: "{{this.to}}",
+      to: "/api-doc?url={{this.to}}",
       label : "{{this.label}}"
     })
   {{/each}}
