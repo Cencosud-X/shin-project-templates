@@ -7,11 +7,10 @@ let apiDocs = [];
 // if (typeof apiDocs == 'array') {
 //   apiDocs = apiDocs.map((apiDoc) => { return { label: apiDoc.label, to: `/api-doc?url=${apiDoc.to}` } })
 // }
-
 {{#if data.settings.apiDocs}}
- 
-apiDocs = data.settings.apiDocs.map((apiDoc) => { return { label: apiDoc.label, to: `/api-doc?url=${apiDoc.to}` } })
-
+  {{#each data.settings.apiDocs}}
+    {{@root.apiDocs.push (map this)}}
+  {{/each}}
 {{/if}}
 
 
