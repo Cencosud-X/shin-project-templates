@@ -18,8 +18,8 @@ const apiDocs = [];
 // {{/each}}
 // {{/isArray}}
 
-{{#if (isArray apiDocs)}}
-  {{#each apiDocs}}
+{{#if (isArray data.settings.apiDocs)}}
+  {{#each data.settings.apiDocs}}
     apiDocs.push({
       label: '{{this.label}}',
       to: '/api-doc?url={{this.to}}'
