@@ -13,7 +13,7 @@ const algo = [];
  
 algo = apiDocs.map((apiDoc) => { return { label: apiDoc.label, to: `/api-doc?url=${apiDoc.to}` } })
 
-{{/apiDoc}}`
+{{/each}}`
 
 
 module.exports = {
