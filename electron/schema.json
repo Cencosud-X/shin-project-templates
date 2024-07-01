@@ -4,17 +4,40 @@
     {
       "properties": {
         "settings": {
-          "required": [
-            "frontendProject"
-          ],
+          "required": ["secured"],
           "type": "object",
           "description": "Specific configuration",
+          "default": { "secured": true },
           "properties": {
-            "frontendProject": {
-              "type": "string",
-              "description": "Front end project to lift in electron",
-              "minLength": 2
-            }
+            "secured": {
+              "type": "boolean",
+              "description": "Secured the page with an authentication provider (default: microsoft adfs)",
+              "default": true
+            },
+            "apiDocs": {
+              "type": "array",
+              "description": "Target consists of 2 elements, separated by dashes: platform and arch, for example macos-x64 or linux-arm64",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string",
+                    "description": "Name of the API documentation"
+                  },
+                  "to": {
+                    "type": "string",
+                    "description": "Path or URL of the API documentation"
+                  }
+                },
+                "required": [
+                  "label",
+                  "to"
+                ],
+                "additionalProperties": false
+              }
+             }
           }
         }
       }
