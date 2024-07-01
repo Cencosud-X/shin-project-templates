@@ -3,7 +3,7 @@ const productName = '{{data.name}}';
 const repositoryName = '{{data.product.name}}'
 const repositoryURL = `https://github.com/Cencosud-xlabs/${repositoryName}`;
 
-let apiDocs = '{{data.settings.apiDocs}}'
+let apiDocs = Array('{{data.settings.apiDocs}}')
 if (typeof apiDocs == 'array') {
   apiDocs = apiDocs.map((apiDoc) => { return { label: apiDoc.label, to: `/api-doc?url=${apiDoc.to}` } })
 }
