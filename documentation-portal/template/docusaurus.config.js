@@ -3,22 +3,18 @@ const productName = '{{data.name}}';
 const repositoryName = '{{data.product.name}}'
 const repositoryURL = `https://github.com/Cencosud-xlabs/${repositoryName}`;
 
-const apiDocs = []; 
+let apiDocs = []; 
 // if (typeof apiDocs == 'array') {
 //   apiDocs = apiDocs.map((apiDoc) => { return { label: apiDoc.label, to: `/api-doc?url=${apiDoc.to}` } })
 // }
 
- 
-{{#isArray data.settings.apiDocs}}
 {{#each data.settings.apiDocs}}
-  apiDocs.push({
-    label: '{{this.label}}',
-    to: '/api-doc?url={{this.to}}'
-  });
-{{/each}}
-{{/isArray}}
-
  
+algo = apiDocs.map((apiDoc) => { return { label: apiDoc.label, to: `/api-doc?url=${apiDoc.to}` } })
+
+{{/each}}
+
+
 
 module.exports = {
   presets: [
