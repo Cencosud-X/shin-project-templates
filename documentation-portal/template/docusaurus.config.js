@@ -2,16 +2,17 @@ const discordHelpLink = 'https://discord.com/channels/872122460185690174/8826547
 const productName = '{{data.name}}';
 const repositoryName = '{{data.product.name}}'
 const repositoryURL = `https://github.com/Cencosud-xlabs/${repositoryName}`;
-Handlebars.registerHelper('map', function(apiDoc) {
-  return { label: apiDoc.label, to: `/api-doc?url=${apiDoc.to}` };
-});
+ 
 let apiDocs = []; 
 // if (typeof apiDocs == 'array') {
 //   apiDocs = apiDocs.map((apiDoc) => { return { label: apiDoc.label, to: `/api-doc?url=${apiDoc.to}` } })
 // }
 {{#if data.settings.apiDocs}}
-  {{#each data.settings.apiDocs}}
-    {{@root.apiDocs.push (map this)}}
+  {{#each apiDocs}}
+    apiDocs.push({
+      label: '{{this.label}}',
+      to: '/api-doc?url={{this.to}}'
+    });
   {{/each}}
 {{/if}}
 
