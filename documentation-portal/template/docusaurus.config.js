@@ -8,11 +8,11 @@ let apiDocs = [];
 //   apiDocs = apiDocs.map((apiDoc) => { return { label: apiDoc.label, to: `/api-doc?url=${apiDoc.to}` } })
 // }
 
-{{#each data.settings.apiDocs}}
+{{#if data.settings.apiDocs}}
  
-algo = apiDocs.map((apiDoc) => { return { label: apiDoc.label, to: `/api-doc?url=${apiDoc.to}` } })
+apiDocs = apiDocs.map((apiDoc) => { return { label: apiDoc.label, to: `/api-doc?url=${apiDoc.to}` } })
 
-{{/each}}
+{{/if}}
 
 
 
