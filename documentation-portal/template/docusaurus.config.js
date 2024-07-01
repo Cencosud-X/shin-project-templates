@@ -4,19 +4,14 @@ const repositoryName = '{{data.product.name}}'
 const repositoryURL = `https://github.com/Cencosud-xlabs/${repositoryName}`;
  
 let apiDocs = []; 
-// if (typeof apiDocs == 'array') {
-//   apiDocs = apiDocs.map((apiDoc) => { return { label: apiDoc.label, to: `/api-doc?url=${apiDoc.to}` } })
-// }
 {{#if data.settings.apiDocs}}
   {{#each data.settings.apiDocs}}
-    apiDocs.push(
+    apiDocs.push({
       to: {{this.to}},
       label : {{this.label}}
-    )
+    })
   {{/each}}
 {{/if}}
-
-
 
 module.exports = {
   presets: [
