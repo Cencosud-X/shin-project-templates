@@ -9,11 +9,11 @@ const algo = [];
 //   apiDocs = apiDocs.map((apiDoc) => { return { label: apiDoc.label, to: `/api-doc?url=${apiDoc.to}` } })
 // }
 
-{{#each data.settings.topics}}
+`{{#each data.settings.topics}}
  
 algo = apiDocs.map((apiDoc) => { return { label: apiDoc.label, to: `/api-doc?url=${apiDoc.to}` } })
 
-{{/each}}
+{{/each}}`
 
 
 module.exports = {
