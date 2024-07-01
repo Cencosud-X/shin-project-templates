@@ -9,14 +9,23 @@ const apiDocs = [];
 // }
 
  
-{{#isArray apiDocs}}
-{{#each apiDocs}}
-  apiDocs.push({
-    label: '{{this.label}}',
-    to: '/api-doc?url={{this.to}}'
-  });
-{{/each}}
-{{/isArray}}
+// {{#isArray apiDocs}}
+// {{#each apiDocs}}
+//   apiDocs.push({
+//     label: '{{this.label}}',
+//     to: '/api-doc?url={{this.to}}'
+//   });
+// {{/each}}
+// {{/isArray}}
+
+{{#if (isArray apiDocs)}}
+  {{#each apiDocs}}
+    apiDocs.push({
+      label: '{{this.label}}',
+      to: '/api-doc?url={{this.to}}'
+    });
+  {{/each}}
+{{/if}}
 
 module.exports = {
   presets: [
