@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { RedocStandalone } from 'redoc';
 import Layout from '@theme/Layout';
-window.location.reload();
 
 function Redocusaurus(props: any) {
   const [spec, setSpec] = useState('');
