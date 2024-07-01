@@ -7,8 +7,8 @@ let apiDocs = [];
 {{#if data.settings.apiDocs}}
   {{#each data.settings.apiDocs}}
     apiDocs.push({
-      to: {{this.to}},
-      label : {{this.label}}
+      to: "{{this.to}}",
+      label : "{{this.label}}"
     })
   {{/each}}
 {{/if}}
