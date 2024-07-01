@@ -10,7 +10,7 @@ let apiDocs = [];
 
 {{#if data.settings.apiDocs}}
  
-apiDocs = apiDocs.map((apiDoc) => { return { label: apiDoc.label, to: `/api-doc?url=${apiDoc.to}` } })
+apiDocs = data.settings.apiDocs.map((apiDoc) => { return { label: apiDoc.label, to: `/api-doc?url=${apiDoc.to}` } })
 
 {{/if}}
 
