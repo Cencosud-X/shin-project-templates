@@ -1,11 +1,7 @@
-const constants = require('./src/constants');
-
 const discordHelpLink = 'https://discord.com/channels/872122460185690174/882654760027689011';
 const productName = 'test-docu';
 const repositoryName = 'shin'
 const repositoryURL = `https://github.com/Cencosud-xlabs/${repositoryName}`;
-
-const apiDocs = constants.API_DOCS;
 
 module.exports = {
   presets: [
@@ -61,12 +57,14 @@ module.exports = {
           position: 'left',
           label: 'API',
         },
+        {{#if data.settings.apiDocs}}
         {
           type: 'dropdown',
           label: 'API DOCS',
           position: 'right',
-          items: apiDocs,
+          items: require('./src/constants').API_DOCS,
         },
+        {{/if}}
         {
           href: repositoryURL,
           position: 'right',
