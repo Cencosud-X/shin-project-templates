@@ -13,5 +13,8 @@
     "light": "logo.svg"
   },
   "name": "SHIN Project Templates",
-  "types": ["documentation-portal/typerc.json"]
+  "types": [
+    "documentation-portal/typerc.json",
+    "api/typerc.json"
+  ]
 }
