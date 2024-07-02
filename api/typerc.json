@@ -4,7 +4,8 @@
   "tags": [
     "Nestjs",
     "Api",
-    "Node"
+    "Node",
+    "Cencosud-xlabs"
   ],
   "kind": "api",
   "folder": "apps",
