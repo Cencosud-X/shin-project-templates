@@ -9,7 +9,7 @@ async function bootstrap() {
   const app = await NestFactory.create(ApiModule);
 
   const documentationOptions = new DocumentBuilder()
-    .setTitle(`${secrets.PRODUCT_NAME}-API`)
+    .setTitle(`${secrets.PRODUCT_NAME}-API`.toLocaleUpperCase())
     .setDescription("API BASE DOCUMENTATION")
     .setVersion("1.0")
     .addTag("API")
