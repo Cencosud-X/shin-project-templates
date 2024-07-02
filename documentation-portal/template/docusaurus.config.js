@@ -1,10 +1,10 @@
-import constants from './constants';
+import constants from './src/constants';
 const discordHelpLink = 'https://discord.com/channels/872122460185690174/882654760027689011';
 const productName = '{{data.name}}';
 const repositoryName = '{{data.product.name}}'
 const repositoryURL = `https://github.com/Cencosud-xlabs/${repositoryName}`;
 
-const apiDocs = constants.apiDocs; 
+const apiDocs = constants.API_DOCS; 
 
 module.exports = {
   presets: [
