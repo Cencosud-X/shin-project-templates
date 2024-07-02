@@ -1,5 +1,4 @@
 import { Controller, Get } from "@nestjs/common";
-
 import { HealthService } from "./health.service";
 import { ApiOperation, ApiTags } from "@nestjs/swagger";
 
