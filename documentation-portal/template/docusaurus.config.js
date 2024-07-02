@@ -3,13 +3,13 @@ const productName = '{{data.name}}';
 const repositoryName = '{{data.product.name}}'
 const repositoryURL = `https://github.com/Cencosud-xlabs/${repositoryName}`;
  
-let apiDocs = []; 
+const apiDocs = []; 
 {{#if data.settings.apiDocs}}
   {{#each data.settings.apiDocs}}
-    apiDocs.push({
-      to: "/api-doc?url={{this.to}}",
-      label : "{{this.label}}"
-    })
+apiDocs.push({
+  to: "/api-doc?url={{this.to}}",
+  label : "{{this.label}}"
+})
   {{/each}}
 {{/if}}
 

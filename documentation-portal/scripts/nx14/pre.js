@@ -25,6 +25,14 @@ module.exports = async (runner, context) => {
       return `npm install ${pkg}@2.0.0`;
     }),
 
+    // Swagger Dependencies
+    context.whenNotInstalled("@nestjs/swagger", (pkg) => {
+      return `npm install ${pkg}@5.0.0`;
+    }),
+    context.whenNotInstalled("swagger-ui-express", (pkg) => {
+      return `npm install ${pkg}@^4.6.2`;
+    }),
+
     // Project creation
     `npx nx g @nrwl/web:app ${context.getProjectName()}`,
     `npx nx g @nrwl/workspace:rm ${context.getProjectName()}-e2e`,
